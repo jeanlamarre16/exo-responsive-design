@@ -87,7 +87,7 @@ footer {
     background-color: var(--nav-and-footer-bgcolor);
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 360px) {
     nav  {
         display : flex;
         justify-content: space-between;
@@ -101,8 +101,10 @@ footer {
         justify-content: center;
     }
 
+    /*  ============== MISE EN OEUVRE DE LA FONCTION CLAMP =============== */
     header h1 {
-        font-size : 20px;
+        filter: drop-shadow(1px 1px 5px var(--nav-and-footer-bgcolor));
+       font-size : clamp(16px, 1.5rem, 20px); 
     }
 
     nav > ul > li {
@@ -116,7 +118,7 @@ footer {
     }
 
     /* le deuxième enfants (élément article) la section featured-posts s'étend sur deux colonnes */
-    #featured-posts article:nth-child(2) {
+    #featured-posts article:first-of-type {
         grid-column: span 2;
     }
 
@@ -125,3 +127,83 @@ footer {
         margin : .5rem 0;
     }
 }
+
+@media screen and (max-width : 1200px ) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    header {
+        display : flex;
+        align-items : center;
+        justify-content: center;
+    }
+
+    /* ============== MISE EN OEUVRE DE LA FONCTION CLAMP =============== */
+    header h1 {
+        filter: drop-shadow(1px 1px 5px var(--nav-and-footer-bgcolor));
+        font-size : clamp(30px, 2rem, 40px)
+    }
+
+    #featured-posts {
+        column-gap : 10px;
+        display : grid;
+        grid-template-columns: 50% repeat(2, 25%) ;
+    }
+
+    section article{
+        width: 100%; 
+        margin : .5rem 0;
+    }
+
+    /* repartition des éléments de la grille */
+
+    #featured-posts h2 {
+        grid-column : 1/-1;
+    }
+
+    #featured-posts article:first-of-type {
+        grid-column : span 1;
+        grid-row: span 2;
+    }
+
+}
+
+@media screen and (max-width : 768px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header {
+        display : flex;
+        align-items : center;
+        justify-content: center;
+    }
+
+    #featured-posts {
+        column-gap : 10px;
+        display : grid;
+        grid-template-columns: repeat(2, 50%) ;
+    }
+
+    #featured-posts h2 {
+        grid-column : 1/-1;
+    }
+
+    #featured-posts article:first-of-type {
+        grid-column : 1/-1;
+        grid-row : span 2;
+        height : 150px;
+    }
+
+      /* ============== MISE EN OEUVRE DE LA FONCTION CLAMP =============== */
+      header h1 {
+        filter: drop-shadow(1px 1px 5px var(--nav-and-footer-bgcolor));
+        font-size : clamp(20px, 1.8rem, 30px)
+    }
+}
+
