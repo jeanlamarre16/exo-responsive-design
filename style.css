@@ -87,6 +87,10 @@ footer {
     background-color: var(--nav-and-footer-bgcolor);
 }
 
+#featured-posts article h1 {
+    color : var(--nav-and-footer-bgcolor);
+}
+
 @media screen and (max-width: 360px) {
     nav  {
         display : flex;
