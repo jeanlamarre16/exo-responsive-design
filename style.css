@@ -91,47 +91,8 @@ footer {
     color : var(--nav-and-footer-bgcolor);
 }
 
-@media screen and (max-width: 360px) {
-    nav  {
-        display : flex;
-        justify-content: space-between;
-        align-items: center;
-    }
 
-    /* centrer le contenu de la balise h1 contenu dans le header */
-    header {
-        display : flex;
-        align-items : center;
-        justify-content: center;
-    }
-
-    /*  ============== MISE EN OEUVRE DE LA FONCTION CLAMP =============== */
-    header h1 {
-        filter: drop-shadow(1px 1px 5px var(--nav-and-footer-bgcolor));
-       font-size : clamp(16px, 1.5rem, 20px); 
-    }
-
-    nav > ul > li {
-        display : block;
-    }
-
-    #featured-posts {
-        column-gap : 10px;
-        display : grid;
-        grid-template-columns: repeat(2, 1fr) ;
-    }
-
-    /* le deuxième enfants (élément article) la section featured-posts s'étend sur deux colonnes */
-    #featured-posts article:first-of-type {
-        grid-column: span 2;
-    }
-
-    section article{
-        width: 100%; 
-        margin : .5rem 0;
-    }
-}
-
+/* ======================= Media query : écran inférieur ou égale à 1200 px =======================*/
 @media screen and (max-width : 1200px ) {
     nav {
         display: flex;
@@ -172,9 +133,9 @@ footer {
         grid-column : span 1;
         grid-row: span 2;
     }
-
 }
 
+/* ======================= Media query : écran inférieur ou égale à 768 px =======================*/
 @media screen and (max-width : 768px) {
     nav {
         display: flex;
@@ -200,14 +161,10 @@ footer {
 
     #featured-posts article:first-of-type {
         grid-column : 1/-1;
-        grid-row : span 2;
-        height : 150px;
     }
 
-      /* ============== MISE EN OEUVRE DE LA FONCTION CLAMP =============== */
       header h1 {
         filter: drop-shadow(1px 1px 5px var(--nav-and-footer-bgcolor));
         font-size : clamp(20px, 1.8rem, 30px)
     }
 }
-
